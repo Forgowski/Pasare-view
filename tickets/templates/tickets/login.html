@@ -1,0 +1,26 @@
+{% extends 'tickets/base.html' %}
+{% load static %}
+{% block title %}
+    Logowanie
+{% endblock %}
+{% block content %}
+
+    {% load socialaccount %}
+    <style>
+        .content {
+            display: flex;
+            margin: auto;
+            align-items: center;
+        }
+    </style>
+    <form action="{% provider_login_url 'google' %}" method="post">
+        {% csrf_token %}
+        <button class="google-login-button" type="submit" style="border: 0">
+            <img src="{% static 'images/google-icon.png' %}" alt="Google Icon">
+            ZALOGUJ PRZEZ GOOGLE
+        </button>
+    </form>
+
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main_site.css' %}">
+{% endblock %}

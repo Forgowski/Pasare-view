@@ -1,0 +1,166 @@
+{% extends 'tickets/base.html' %}
+{% load define_action %}
+{% load static %}
+{% load mathfilters %}
+{% block title %}
+    profil
+{% endblock %}
+{% block content %}
+    {% if orders %}
+        <div class="container-fluid text-center">
+            <div class="row content">
+                <div class="col-sm-2 sidenav">
+                </div>
+                <div class="col-sm-8 text-left block">
+                    {% for transaction in orders %}
+                        <div class="order">
+                            <div class="row" style="height: 170px">
+
+                                <div class="col-md-4 side-part">
+                                    <b>Zaliczka:</b>
+                                    {% if  transaction.payment_advance_status == "Zapłacone" %}
+                                        {% define "rgba(0,255,0,0.3)" as status_color %}
+                                    {% else %}
+                                        {% define "rgba(255,0,0,0.5)" as status_color %}
+                                    {% endif %}
+
+                                    <p class="mb-0">
+                                        Status: <b
+                                            style="background-color: {{ status_color }}">{{ transaction.payment_advance_status }}</b>
+                                    </p>
+                                    {% if status_color == "rgba(255,0,0,0.5)" %}
+                                        <a href="{% url 'payment_advance' transaction.uuid %}">
+                                            <button type="button" class="btn btn-success btn-sm">Zapłać</button>
+                                        </a>
+                                    {% endif %}
+                                </div>
+                                <div class="col-md-4" style="margin: auto">
+                                    <h4>{{ transaction.target_city }}</h4>
+                                    <h5>{{ transaction.out_date }}</h5>
+                                    <p>-</p>
+                                    {% if transaction.back_date == None %}
+                                        <h5>{{ "------" }}</h5>
+                                    {% else %}
+                                        <h5>{{ transaction.back_date }}</h5>
+                                    {% endif %}
+
+                                    <button type="button" class="btn btn-primary detail_button" data-toggle="modal"
+                                            data-transaction-id="{{ forloop.counter }}"
+                                            data-target="#exampleModalCenter">
+                                        Szczegóły
+                                    </button>
+                                </div>
+
+                                <div class="col-md-4 side-part">
+                                    <b>Wpłata:</b>
+                                    {% if  transaction.payment_status == "Zapłacone" %}
+                                        {% define "rgba(0,255,0,0.3)" as status_color %}
+                                    {% elif transaction.payment_status == "Nie zapłacone" %}
+                                        <p style="margin: 0">Cena: {{ transaction.payment_value|div:100|floatformat:2 }}zł</p>
+                                        {% define "rgba(255,0,0,0.5)" as status_color %}
+                                    {% else %}
+                                        {% define "rgba(110,110,255,0.5)" as status_color %}
+                                    {% endif %}
+
+                                    <p class="mb-0">
+                                        Status: <b
+                                            style="background-color: {{ status_color }}">{{ transaction.payment_status }}</b>
+                                    </p>
+                                    {% if status_color == "rgba(255,0,0,0.5)" %}
+                                        <a href="{% url 'payment' transaction.uuid %}">
+                                            <button type="button" class="btn btn-success btn-sm">Zapłać</button>
+                                        </a>
+                                    {% endif %}
+
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+                <div class="col-sm-2 sidenav">
+
+                </div>
+            </div>
+        </div>
+        <!-- Button trigger modal -->
+
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+             aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Szczegóły</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>WhatsApp: <span id="whatsapp"></span></p>
+                        <p>Email kontaktowy: <span id="contact_email"></span></p>
+                        <p>Lot: <span id="fly_continent"></span></p>
+                        <p>W jedną czy dwie strony: <span id="trip_option"></span></p>
+                        <p>Z: <span id="city"></span></p>
+                        <p>Do: <span id="target_city"></span></p>
+                        <p>Liczba osób: <span id="number_of_passengers"></span></p>
+                        <p>Data wylotu: <span id="out_date"></span></p>
+                        <p>Data powrotu: <span id="back_date"></span></p>
+                        <p>Bagaż: <span id="luggage"></span></p>
+                        <p>Klasa lotu: <span id="fly_class"></span></p>
+                        <p>Maksymalna cena biletu: <span id="max_price"></span></p>
+                        <p>Liczba ofert: <span id="number_of_offers"></span></p>
+                        <p>Dodatkowe informacje: <span id="additional_information"></span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    {% else %}
+        <p class="mt-5">Currently, you don't have any orders.</p>
+    {% endif %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/admin_panel.css' %}">
+
+    <script>
+        let json_orders =
+        {{ json_orders|safe }}
+        if (json_orders) {
+            const whatsapp = document.getElementById('whatsapp')
+            const contact_email = document.getElementById('contact_email')
+            const fly_continent = document.getElementById('fly_continent')
+            const trip_option = document.getElementById('trip_option')
+            const city = document.getElementById('city')
+            const target_city = document.getElementById('target_city')
+            const number_of_passengers = document.getElementById('number_of_passengers')
+            const out_date = document.getElementById('out_date')
+            const back_date = document.getElementById('back_date')
+            const luggage = document.getElementById('luggage')
+            const fly_class = document.getElementById('fly_class')
+            const max_price = document.getElementById('max_price')
+            const number_of_offers = document.getElementById('number_of_offers')
+            const additional_information = document.getElementById('additional_information')
+        }
+
+
+        $('.detail_button').click(function () {
+            let transactionId = $(this).data('transaction-id');
+            whatsapp.innerHTML = json_orders[transactionId - 1]["fields"]['whatsapp']
+            contact_email.innerHTML = json_orders[transactionId - 1]["fields"]['contact_email']
+            fly_continent.innerHTML = json_orders[transactionId - 1]["fields"]['fly_continent']
+            trip_option.innerHTML = json_orders[transactionId - 1]["fields"]['trip_option']
+            city.innerHTML = json_orders[transactionId - 1]["fields"]['city']
+            target_city.innerHTML = json_orders[transactionId - 1]["fields"]['target_city']
+            number_of_passengers.innerHTML = json_orders[transactionId - 1]["fields"]['number_of_passengers']
+            out_date.innerHTML = json_orders[transactionId - 1]["fields"]['out_date']
+            back_date.innerHTML = json_orders[transactionId - 1]["fields"]['back_date']
+            luggage.innerHTML = json_orders[transactionId - 1]["fields"]['luggage']
+            fly_class.innerHTML = json_orders[transactionId - 1]["fields"]['fly_class']
+            max_price.innerHTML = json_orders[transactionId - 1]["fields"]['max_price'] + "zł"
+            number_of_offers.innerHTML = json_orders[transactionId - 1]["fields"]['number_of_offers']
+            additional_information.innerHTML = json_orders[transactionId - 1]["fields"]['additional_information']
+
+        })
+
+
+    </script>
+{% endblock %}

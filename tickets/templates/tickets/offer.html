@@ -1,0 +1,131 @@
+{% extends 'tickets/base.html' %}
+{% load static %}
+{% block title %}Oferta{% endblock %}
+
+{% block content %}
+
+    <section class="pt-4">
+        <div class="container px-lg-5">
+            <!-- Page Features-->
+            <div class="row gx-lg-5">
+                <div class="col-lg-6 col-xxl-4 mb-5" style="margin: auto">
+                    <a href="{% url 'offer_detail' 'europa_południowa'%}">
+                        <div>
+                            <div class="text-center " style="margin: 10px;padding: 10px">
+                                <img src="/static/images/europa-południowa.jpg" class="img-responsive img-fix-height"
+                                     alt="Image">
+                                <h2 class="fs-4 fw-bold">Europa Południowa</h2>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-6 col-xxl-4 mb-5" style="margin: auto">
+                    <a href="{% url 'offer_detail' 'do200' %}">
+                        <div>
+                            <div class="text-center " style="margin: 10px;padding: 10px">
+                                <img src="/static/images/do200.jpg" class="img-responsive img-fix-height"
+                                     alt="Image">
+                                <h2 class="fs-4 fw-bold">Do 200 zł</h2>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-6 col-xxl-4 mb-5" style="margin: auto">
+                    <a href="{% url 'offer_detail' 'zorza_polarna' %}">
+                        <div>
+                            <div class="text-center " style="margin: 10px;padding: 10px">
+                                <img src="/static/images/zorza-polarna.jpg" class="img-responsive img-fix-height"
+                                     alt="Image">
+                                <h2 class="fs-4 fw-bold">Zorza polarna</h2>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-6 col-xxl-4 mb-5" style="margin: auto">
+                    <a href="{% url 'offer_detail' 'daleka_azja' %}">
+                        <div>
+                            <div class="text-center " style="margin: 10px;padding: 10px">
+                                <img src="/static/images/daleka-azja.jpg" class="img-responsive img-fix-height"
+                                     alt="Image">
+                                <h2 class="fs-4 fw-bold">Daleka Azja</h2>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                                <div class="col-lg-6 col-xxl-4 mb-5" style="margin: auto">
+                    <a href="{% url 'offer_detail' 'ameryka_południowa' %}">
+                        <div>
+                            <div class="text-center " style="margin: 10px;padding: 10px">
+                                <img src="/static/images/ameryka-południowa.jpg" class="img-responsive img-fix-height"
+                                     alt="Image">
+                                <h2 class="fs-4 fw-bold">Ameryka Południowa</h2>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-6 col-xxl-4 mb-5" style="margin: auto">
+                    <a href="{% url 'offer_detail' 'safari' %}">
+                        <div>
+                            <div class="text-center " style="margin: 10px;padding: 10px">
+                                <img src="/static/images/safari.jpg" class="img-responsive img-fix-height"
+                                     alt="Image">
+                                <h2 class="fs-4 fw-bold">Safari</h2>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-lg-6 col-xxl-4 mb-5" style="margin: auto">
+                    <a href="{% url 'offer_detail' 'route66' %}">
+                        <div>
+                            <div class="text-center " style="margin: 10px;padding: 10px">
+                                <img src="/static/images/route66.jpg" class="img-responsive img-fix-height"
+                                     alt="Image">
+                                <h2 class="fs-4 fw-bold">Route 66</h2>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+
+                <div class="col-lg-6 col-xxl-4 mb-5" style="margin: auto">
+                    <a href="{% url 'offer_detail' 'bliski_wschód' %}">
+                        <div>
+                            <div class="text-center " style="margin: 10px;padding: 10px">
+                                <img src="/static/images/bliski-wschód.jpg" class="img-responsive img-fix-height"
+                                     alt="Image">
+                                <h2 class="fs-4 fw-bold">Bliski Wschód</h2>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-6 col-xxl-4 mb-5" style="margin: auto">
+                    <a href="{% url 'offer_detail' 'azja_południowo_wschodnia' %}">
+                        <div>
+                            <div class="text-center " style="margin: 10px;padding: 10px">
+                                <img src="/static/images/azja-poludniowo-wschodnia.jpg"
+                                     class="img-responsive img-fix-height"
+                                     alt="Image">
+                                <h2 class="fs-4 fw-bold">Azja Południowo Wschodnia</h2>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-6 col-xxl-4 mb-5" style="margin: auto">
+                    <a href="{% url 'offer_detail' 'weekendowy_wypad' %}">
+                        <div>
+                            <div class="text-center " style="margin: 10px;padding: 10px">
+                                <img src="/static/images/weekendowy-wypad.jpg" class="img-responsive img-fix-height"
+                                     alt="Image">
+                                <h2 class="fs-4 fw-bold">Weekendowy wypad</h2>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/offer.css' %}">
+{% endblock %}

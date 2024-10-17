@@ -1,0 +1,29 @@
+body {
+    background-image: url("/static/images/oferta.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+a {
+    text-decoration: none; /* Removes underline */
+    color: black;
+}
+
+h2 {
+    width: 350px;
+    font-size: 24px;
+    text-shadow: 0 2px 4px black;
+    background-color: rgba(255,255,255,0.8);
+    margin: auto;
+    border-radius: 0px 0px 10px 10px;
+}
+
+/* Add this to your CSS file (offer.css) */
+.img-fix-height {
+    width: 350px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px 10px 0px 0px;
+}
+

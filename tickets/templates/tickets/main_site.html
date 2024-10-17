@@ -1,0 +1,58 @@
+{% extends 'tickets/base.html' %}
+
+{% load static %}
+
+{% block title %}
+    Strona główna
+{% endblock %}
+
+{% block content %}
+    {% load socialaccount %}
+
+    <h1 style="font-size: 75px; color: white">PASARE</h1>
+    <h4 style="color: white"><b>Loty szyte na miare</b></h4><br><br><br>
+    <a class="start-button" href="{% url 'contact' %}">JAK TO DZIAŁA?</a><br><br><br>
+
+    <div class="container text-center">
+        <div class="row">
+
+            <div class="col-lg-4 ">
+                <a href="{% url 'offer' %}">
+                    <div class="tile">
+                        <img src="/static/images/oferta.jpg" class="img-responsive" style="width:100%" alt="Image">
+                        <h2>OFERTA</h2>
+                        <b>Cotygodniowe propozycje <br>biletów lotniczych</b><br><br>
+                    </div>
+                </a>
+            </div>
+
+
+            <div class="col-lg-4 ">
+                <a href="{% url 'form' %}">
+                    <div class="tile" >
+                        <img src="/static/images/formularz.jpg" class="img-responsive" style="width:100%" alt="Image">
+                        <h2>FORMULARZ</h2>
+                        <b>Wspólnie znajdziemy Twój<br>wymarzony lot</b><br><br>
+                    </div>
+                </a>
+            </div>
+
+
+            <div class="col-lg-4 ">
+                <a href="{% url 'contact' %}">
+                    <div class="tile" >
+                        <img src="/static/images/kontakt.jpg" class="img-responsive" style="width:100%" alt="Image">
+                        <h2>Kontakt</h2>
+                        <b>O firmie<br>FAQ<br>Formularz kontaktowy</b>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+    </div><br>
+
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main_site.css' %}">
+
+
+{% endblock %}

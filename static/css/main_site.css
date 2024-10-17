@@ -1,0 +1,83 @@
+body {
+    text-align: center;
+    background-image: url("/static/images/main.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+h1 {
+    margin-top: 10px;
+}
+
+.tile {
+    margin: 10px;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.start-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: white;
+    color: black;
+    font-size: 24px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.login-container {
+    text-align: center;
+}
+
+/* Styl przycisku logowania Google */
+.google-login-button {
+    display: inline-block;
+    background-color: #ffffff;
+    color: #333333;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    padding: 10px 20px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.google-login-button:hover {
+    background-color: #f1f1f1;
+}
+
+/* Styl ikonki Google */
+.google-icon {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+.carousel-inner img {
+    width: 100%; /* Set width to 100% */
+    margin: auto;
+    min-height: 200px;
+}
+
+/* Hide the carousel text when the screen is less than 600 pixels wide */
+@media (max-width: 600px) {
+    .carousel-caption {
+        display: none;
+    }
+}
+
+.tile-div {
+    background-color: white;
+    font-weight: bold;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 2px;
+}
+
+a {
+    text-decoration: none; /* Removes underline */
+    color: black;
+}

@@ -1,0 +1,61 @@
+/* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+body {
+    text-align: center;
+    background-image: url("/static/images/profil.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.row {
+    height: 450px;
+    height: auto;
+}
+
+/* Set gray background color and 100% height */
+.sidenav {
+    padding-top: 20px;
+    height: 100%;
+}
+.order {
+    margin: 15px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid black;
+    border-radius: 4px;
+    padding: 15px;
+    height: auto;
+}
+
+
+/* On small screens, set height to 'auto' for sidenav and grid */
+@media (max-width: 767px) {
+    .sidenav {
+        height: auto;
+        padding: 15px;
+    }
+
+    .row.content {
+        height: auto;
+    }
+
+    .order{
+        height: 350px;
+    }
+}
+
+
+.block {
+    display: block;
+}
+
+
+.side-part {
+    justify-content: center;
+    align-content: center;
+    margin: auto;
+    padding: 10px;
+}
+
+h5{
+    margin: 0;
+}

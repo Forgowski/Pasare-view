@@ -1,0 +1,49 @@
+{% extends 'tickets/base.html' %}
+{% load static %}
+{% block title %}Źródła{% endblock %}
+{% block content %}
+    <style>
+        body {
+            text-align: center;
+            background-image: url("/static/images/profil.jpg");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+
+        .container {
+            display: flex;
+        }
+
+        .left-column, .right-column {
+            flex: 1;
+            background-color: lightgray;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0);
+        }
+
+        .middle-column {
+            flex: 2;
+            text-align: left;
+            background-color: white;
+            padding: 20px;
+            height: 100vh;
+        }
+    </style>
+
+    <body>
+
+    <div class="container">
+        <div class="left-column">
+            <!-- Zawartość lewej kolumny -->
+        </div>
+        <div class="middle-column">
+            <p>zdjęcia: </p>
+        </div>
+        <div class="right-column">
+            <!-- Zawartość prawej kolumny -->
+        </div>
+    </div>
+
+
+{% endblock %}

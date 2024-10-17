@@ -1,0 +1,91 @@
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: lightgrey;
+    font-family: "California FB italic", CustomFont;
+}
+
+p {
+    margin: 0;
+}
+
+.content {
+    flex: 1;
+    margin-top: auto
+    /* Add any necessary styles for your main content area */
+}
+
+.footer {
+    background-color: black;
+    color: white;
+    text-align: center;
+    position: sticky;
+    top: 100%;
+
+    /* Add any necessary styles for your footer, e.g., font-size, etc. */
+}
+
+/* Custom CSS for the hover effect */
+.navbar .nav-link:not(.contact-link):hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.site-panel {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+    width: 60px;
+    background-color: black;
+    box-shadow: -2px 0px 4px rgba(0, 0, 0, 0.1);
+}
+
+.social-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.social-links li {
+    margin: 10px 0;
+    text-align: center;
+}
+
+.social-links a {
+    display: block;
+}
+
+.social-links img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.2s;
+}
+
+.social-links a:hover img {
+    transform: scale(1.2);
+}
+
+
+.navbar.navbar-dark.bg-dark {
+    background-color: grey; /* Set the background color to transparent */
+}
+
+/* Set the color of the navbar links */
+.nav-item {
+    font-size: 24px;
+    -webkit-text-stroke-color: black;
+
+}
+
+/* custom-navbar.css */
+.navbar-nav .nav-link {
+    margin-right: 15px;
+    margin-left: 15px;/* Adjust the value as needed */
+}
+
+.navbar-background {
+    background-color: rgba(0, 0, 0, 0.3);
+}

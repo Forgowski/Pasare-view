@@ -1,0 +1,7 @@
+@font-face {
+    font-family: 'CustomFont'; /* Font family name */
+    src: url('/static/fonts/Californian FB Italic.ttf') format('ttf'); /* Path to .woff2 font file */
+    /* Add more format declarations if needed */
+    font-weight: normal;
+    font-style: normal;
+}

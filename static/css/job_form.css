@@ -1,0 +1,10 @@
+body {
+    background-image: url("/static/images/formularz.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+.hidden {
+    display: none;
+}
+

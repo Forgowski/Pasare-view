@@ -1,0 +1,48 @@
+{% extends 'tickets/base.html' %}
+{% load static %}
+{% block title %}
+    Admin panel
+{% endblock %}
+
+{% block content %}
+
+
+    <div class="container-fluid text-center">
+        <div class="row content">
+            <div class="col-sm-2 sidenav">
+            </div>
+            <div class="col-sm-8 text-left block">
+                {% for order in orders %}
+                    <div class="order">
+                        <div class="row">
+                            <div class="order-topic">
+                                <p>mail: {{ order.account_email }}</p>
+                            </div>
+                            <div class="col-md-6">
+                                <b>Zaliczka:</b>
+                                <p>{{ order.payment_advance_status }}</p>
+                            </div>
+                            <div class="col-md-6">
+                                <b>wpłata:</b>
+                                <p>{{ order.payment_status }}</p>
+                                {% if order.payment_status == "Nie określone" %}
+                                    <form method="post" action="{% url 'set_price' order.uuid %}">
+                                        {% csrf_token %}
+                                        <input type="number" name="price" id="price">
+                                        <button type="submit">Ustaw cenę</button>
+                                    </form>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="col-sm-2 sidenav">
+
+            </div>
+        </div>
+    </div>
+
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/admin_panel.css' %}">
+{% endblock %}

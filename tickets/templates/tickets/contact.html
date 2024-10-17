@@ -1,0 +1,146 @@
+{% extends 'tickets/base.html' %}
+{% load static %}
+{% load crispy_forms_filters %}
+{% load crispy_forms_tags %}
+{% block title %}
+    Kontakt
+{% endblock %}
+{% block content %}
+    <div class="container mt-4">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">
+                        <h1 class="text-center">Jak to działa?</h1>
+                    </div>
+                    <div class="card-body">
+                        <p>
+                            1. Kliknij w zakładkę “formularz”<br>
+                            3. Wypełnij formularz ofertowy<br>
+                            A) wybierz lot w obrębie Europy (10 zł za dwie oferty i każda następna 10 zł)<br>
+                            B) wybierz lot międzykontynentalny (20 zł za dwie oferty i każda następna 20 zł)<br>
+                            C) jeżeli nie jesteś pewien/pewna niektórych z pól najedź kursorem na <img
+                                src="https://shots.jotform.com/kade/Screenshots/blue_question_mark.png" height="13px"/>
+                            gdzie pojawi się
+                            podpowiedź<br>
+                            4. Jeżeli posiadasz dodatkowe wymagania wpisz je w miejscu na dole formularza<br>
+                            5. Wpłać zaliczkę zgodnie ze swoim wyborem<br>
+                            6. Maksymalnie w przeciągu 48 godzin skontaktujemy się z tobą poprzez e-mail lub WhatsApp z
+                            informacja czy:<br>
+                            A) udało nam się znaleźć twój wymarzony bilet lotniczy w określonej kwocie<br>
+                            B) Maksymalna kwota została przekroczona<br>
+                            C) Nie udało nam się znaleźć biletu w podanych datach<br>
+                            7. Cena za wykonana usługę oraz jej status pojawi się automatycznie w zakładce profil <br>
+                            8. Zapłać wyznaczona kwotę, <b>która wynosi 10% ceny biletu za jedną osobę</b> <br>
+                            9. Status wpłaty “opłacone” pozwoli uzyskać Ci dostęp do danych szczegółowych biletów, które
+                            zostaną do Ciebie przesłane mailowo <br>
+                            10. Zakup swój wymarzony bilet na podanej przez nas stronie (jeżeli potrzebujesz w tym
+                            pomocy zgłoś się do nas w korespondencji)<br>
+
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container mt-4">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">
+                        <h1 class="text-center">O firmie</h1>
+                    </div>
+                    <div class="card-body">
+                        <p>Cześć! Mam na imię Daniel i jedynie od podróżowania bardziej lubię podróżować tanio :)
+                            Niestety
+                            wakacje w biurach podróży stają się coraz droższe i częściej decydujemy się na
+                            zorganizowanie wyjazdów na własna rękę. Niejednokrotnie zdarza się jednak, że połowę budżetu
+                            naszych wakacji pochłania zakup biletu lotniczego. Dlatego bardzo chętnie pomogę Ci wyszukać
+                            jak najtańszy bilet lotniczy który spełni Twoje wymagania a Ty zaoszczędzisz nie tylko
+                            pieniądze ale i czas. Zajrzyj do zakładki jak to działa i przekonaj się jakie to proste!
+                            Gwarantuje, że wspólnie znajdziemy twój wymarzony bilet lotniczy! :) Po zapoznaniu się z
+                            nasza stroną kliknij <a href="{% url 'form' %}"><b>tutaj</b></a> i wypełnij formularz ofertowy a odpowiedź otrzymasz w przeciągu
+                            48 godzin! Jeżeli jednak nie jesteś pewien/pewna swoich planów wypełnij formularz kontaktowy
+                            lub wyślij wiadomość poprzez whatsapp lub e-mail podany poniżej i wspólnie zastanowimy się
+                            jak mogę Ci pomóc! </p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container mt-4">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">
+                        <h1 class="text-center">FAQ</h1>
+                    </div>
+                    <div class="card-body">
+                        <h5><b>Zwrot kosztów </b></h5>
+                        <p>Jeżeli otrzymane oferty są dla Ciebie niesatysfakcjonujące, napisz do nas i zastanowimy się
+                            wspólnie jak możemy znaleźć jeszcze bardziej dopasowane do twoich potrzeb bilety lotnicze.
+                            Pamiętaj jednak, że bilety kupujesz bezpośrednio u przewoźnika, my jedynie pomagamy je
+                            wyszukać. Dlatego zapoznaj się dokładnie z polityką zwrotów operatora.</p><br>
+                        <h5><b>Czym się zajmujemy? </b></h5>
+                        <p>Zajmujemy się wyszukiwaniem biletów dopasowanych specjalnie do Twoich wymagań. Szukamy ich
+                            bezpośrednio o przewoźników unikając niepotrzebnych pośredników. Dzięki naszemu
+                            doświadczeniu pomożemy Ci w znalezieniu jak najtańszego a zarazem najlepszego biletu
+                            lotniczego.
+                        </p><br>
+                        <h5><b>Czy mam pewność, że mój bilet zostanie znaleziony?</b></h5>
+                        <p>Niestety niekiedy bilety lotnicze nie są dostępne w wybrane dni. W takiej sytuacji
+                            poinformujemy Cię o napotkanym problemie i zapytamy o ewentualnej zmianie daty. Podobny
+                            schemat działania będzie występować gdy zaznaczona cena maksymalna biletu będzie zbyt
+                            niska aby znaleźć interesujący Cię lot.
+                        </p><br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container mt-4">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">
+                        <h1 class="text-center">Kontakt</h1>
+                    </div>
+                    <div class="card-body">
+                        <h5><b>Nr. WhatsApp</b></h5>
+                        <p>+48 798 060 959</p><br>
+                        <h5><b>Email </b></h5>
+                        <p>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container mt-4">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">
+                        <h1 id="formularz" class="text-center">Formularz kontaktowy</h1>
+                    </div>
+                    <div class="card-body">
+
+                        <form method="post">
+                            {% csrf_token %}
+                            {{ form | crispy }}
+                            <button type="submit" class="btn btn-primary mt-3">Wyślij</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="{% static 'js/job_form.js' %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/job_form.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/contact.css' %}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+{% endblock %}
+

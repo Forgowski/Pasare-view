@@ -1,0 +1,39 @@
+body {
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.info_box {
+    margin: 10px auto;
+    padding: 5px;
+}
+
+.title-box {
+    font-size: 36px;
+    margin-bottom: 0;
+
+}
+
+.box {
+    text-align: center;
+    margin: 50px auto;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 10px;
+}
+
+.footer-box {
+    font-size: 20px;
+    margin-bottom: 0;
+}
+
+p {
+    margin-bottom: 0;
+}
+
+.btn-lg {
+    padding: 10px 20px;
+    font-size: 32px;
+    border-radius: 10px;
+}
